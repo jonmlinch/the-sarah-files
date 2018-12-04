@@ -6,7 +6,7 @@ class BlogEntry extends Component {
   render() {
     return (
       <div>
-       <p>This is where the Text editor will be found</p>
+          <h1>This is where the text editor will go</h1>
       </div>
     );
   }
