@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TextEditor from './text-editor/TextEditor'
+import PageContainer from './PageContainer'
 import '../App.css';
 
 class BlogEntry extends Component {
@@ -9,7 +9,7 @@ class BlogEntry extends Component {
       <div className="Editor">
           <h1>Write your thoughts below</h1>
           <hr></hr>
-          <TextEditor />
+          <PageContainer />
       </div>
     );
   }
