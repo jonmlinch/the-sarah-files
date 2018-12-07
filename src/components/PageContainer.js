@@ -3,11 +3,8 @@ import { EditorState, RichUtils } from 'draft-js'
 import Editor from 'draft-js-plugins-editor'
 
 import createHighlightPlugin from './plugins/highlightPlugin'
+import addLinkPlugin from './plugins/addLinkPlugin'
 
-// import Icon from 'react-icons-kit'
-// import { bold } from 'react-icons-kit/feather/bold'
-// import { italic } from 'react-icons-kit/feather/italic'
-// import { underline } from 'react-icons-kit/feather/underline'
 
 const highlightPlugin = createHighlightPlugin()
 
@@ -19,6 +16,7 @@ class PageContainer extends Component {
         }
         this.plugins = [
             highlightPlugin,
+            addLinkPlugin,
         ]
     }
 
