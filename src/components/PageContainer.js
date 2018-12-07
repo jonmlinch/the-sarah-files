@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
-import { Editor, EditorState, RichUtils } from 'draft-js'
+import { EditorState, RichUtils } from 'draft-js'
+import Editor from 'draft-js-plugins-editor'
 
-import Icon from 'react-icons-kit'
-import { bold } from 'react-icons-kit/feather/bold'
-import { italic } from 'react-icons-kit/feather/italic'
-import { underline } from 'react-icons-kit/feather/underline'
+import createHighlightPlugin from './plugins/highlightPlugin'
 
+// import Icon from 'react-icons-kit'
+// import { bold } from 'react-icons-kit/feather/bold'
+// import { italic } from 'react-icons-kit/feather/italic'
+// import { underline } from 'react-icons-kit/feather/underline'
 
+const highlightPlugin = createHighlightPlugin()
 
 class PageContainer extends Component {
     constructor(props) {
@@ -14,6 +17,9 @@ class PageContainer extends Component {
         this.state = {
             editorState: EditorState.createEmpty(),
         }
+        this.plugins = [
+            highlightPlugin,
+        ]
     }
 
     onChange = (editorState) => {
@@ -34,33 +40,60 @@ class PageContainer extends Component {
     }
 
     boldOnClick = () => {
-        this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'BOLD'))
+        this.onChange(
+            RichUtils.toggleInlineStyle(this.state.editorState, "BOLD")
+        );
     }
 
-    italicOnCLick = () => {
-        this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'ITALIC'))
-    }
-
+    italicOnClick = () => {
+		this.onChange(
+			RichUtils.toggleInlineStyle(this.state.editorState, "ITALIC")
+		);
+    };
+    
     underlineOnClick = () => {
-        this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'UNDERLINE'))
+        this.onChange(
+            RichUtils.toggleInlineStyle(this.state.editorState, "UNDERLINE")
+        );
     }
+
+	strikeThroughOnClick = () => {
+		this.onChange(
+			RichUtils.toggleInlineStyle(this.state.editorState, "STRIKETHROUGH")
+		);
+	};
+
+	onHighlight = () => {
+		this.onChange(
+			RichUtils.toggleInlineStyle(this.state.editorState, "HIGHLIGHT")
+		);
+	};
+
+    
 
     render() {
         return (
             <div className="editorContainer">
-                <button onClick={ this.boldOnClick }>
-                    <Icon icon={ bold } />
-                </button>
-                <button onClick={ this.italicOnClick }>
-                    <Icon icon={ italic } />
-                </button>
-                <button onClick={ this.underlineOnClick }>
-                    <Icon icon={ underline } />
-                </button>
+                <button className="underline" onClick={this.underlineOnClick}>
+					U
+				</button>
+				<button className="bold" onClick={this.boldOnClick}>
+					<b>B</b>
+				</button>
+				<button className="italic" onClick={this.italicOnClick}>
+					<em>I</em>
+				</button>
+				<button className="strikethrough" onClick={this.strikeThroughOnClick}>
+					abc
+				</button>
+				<button className="highlight" onClick={this.onHighlight}>
+					<span style={{ background: "yellow", padding: "0.3em" }}>H</span>
+				</button>
                 <div className="editors">
                     <Editor 
                         editorState={ this.state.editorState } 
                         onChange={ this.onChange }
+                        plugins={ this.plugins }
                         handleKeyCommand={ this.handleKeyCommand }
                         />
                 </div>
