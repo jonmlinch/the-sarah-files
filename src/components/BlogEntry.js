@@ -6,7 +6,7 @@ class BlogEntry extends Component {
   
   render() {
     return (
-      <div className="Editor">
+      <div className="App">
           <h1>Write your thoughts below</h1>
           <hr></hr>
           <PageContainer />
