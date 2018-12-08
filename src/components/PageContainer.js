@@ -5,6 +5,8 @@ import Editor from 'draft-js-plugins-editor'
 import createHighlightPlugin from './plugins/highlightPlugin'
 import addLinkPlugin from './plugins/addLinkPlugin'
 
+import BlockStyleToolbar, { getBlockStyle } from './blockStyles/BlockStyleToolbar'
+
 
 const highlightPlugin = createHighlightPlugin()
 
@@ -86,13 +88,23 @@ class PageContainer extends Component {
 		this.onChange(
 			RichUtils.toggleInlineStyle(this.state.editorState, "HIGHLIGHT")
 		);
-	};
+    };
+    
+    toggleBlockType = (blockType) => {
+        this.onChange(
+            RichUtils.toggleBlockType(this.state.editorState, blockType)
+        );
+    };
 
     
 
     render() {
         return (
             <div className="editorContainer">
+                <BlockStyleToolbar 
+                    editorState={ this.state.editorState }
+                    onToggle={ this.toggleBlockType }
+                />
                 <button className="inline styleButton" id="underline" onClick={this.underlineOnClick}>
 					U
 				</button>
@@ -113,6 +125,7 @@ class PageContainer extends Component {
 				</button>
                 <div className="editors">
                     <Editor 
+                        blockStyleFn={getBlockStyle}
                         editorState={ this.state.editorState } 
                         onChange={ this.onChange }
                         plugins={ this.plugins }
