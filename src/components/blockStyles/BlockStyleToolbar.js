@@ -11,6 +11,7 @@ export const BLOCK_TYPES = [
 ];
 
 export const HEADER_TYPES = [
+    {label: "(Select)", style: "unstyled"},
     {label: "H1", style: "header-one"},
     {label: "H2", style: "header-two"},
     {label: "H3", style: "header-three"},
@@ -52,7 +53,7 @@ class BlockStyleToolbar extends Component {
                                         active={type.style === blockType}
                                         label={type.label}
                                         onToggle={this.props.onToggle}
-                                        styel={type.style}
+                                        style={type.style}
                                         key={type.label}
                                         type={type}
                                     />

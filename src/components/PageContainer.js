@@ -6,6 +6,7 @@ import createHighlightPlugin from './plugins/highlightPlugin'
 import addLinkPlugin from './plugins/addLinkPlugin'
 
 import BlockStyleToolbar, { getBlockStyle } from './blockStyles/BlockStyleToolbar'
+import mediaBlockRenderer from './entities/mediaBlockRenderer'
 
 
 const highlightPlugin = createHighlightPlugin()
@@ -126,6 +127,7 @@ class PageContainer extends Component {
                 <div className="editors">
                     <Editor 
                         blockStyleFn={getBlockStyle}
+                        blockRendererFn={mediaBlockRenderer}
                         editorState={ this.state.editorState } 
                         onChange={ this.onChange }
                         plugins={ this.plugins }
