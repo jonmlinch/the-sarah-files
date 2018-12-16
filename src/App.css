@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.editorContainer {
-	padding: 1em;
-	margin: 1em;
-}
-
 .editors {
 	border: 1px transparent solid;
 	padding: 1.5em 2em 2.75em 2em;
@@ -47,6 +42,10 @@ button.underline {
 
 .editors {
 	background-color: white;
+}
+
+a {
+  cursor: pointer;
 }
 
 a:link,

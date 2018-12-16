@@ -5,8 +5,11 @@
   "dependencies": {
     "draft-js": "^0.10.5",
     "draft-js-plugins-editor": "^2.1.1",
-    "react": "^16.6.3",
+    "draftjs-to-html": "^0.8.4",
+    "immutable": "^4.0.0-rc.12",
+    "react": "^15.6.2",
     "react-dom": "^16.6.3",
+    "react-draft-wysiwyg": "^1.12.13",
     "react-emotion": "^10.0.0",
     "react-icons-kit": "^1.2.1",
     "react-router-dom": "^4.3.1",

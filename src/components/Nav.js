@@ -9,7 +9,7 @@ class Nav extends Component {
       <div>
        <nav>
            <Link to="/">Home</Link>
-           <Link to="/blogentry">Write</Link>
+           <Link to="/editor">Editor</Link>
        </nav>
       </div>
     );

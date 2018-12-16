@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { EditorState, RichUtils } from 'draft-js'
+import { EditorState, RichUtils, AtomicBlockUtils } from 'draft-js'
 import Editor from 'draft-js-plugins-editor'
 
 import createHighlightPlugin from './plugins/highlightPlugin'
@@ -64,7 +64,8 @@ class PageContainer extends Component {
 		);
     };
     
-    onAddLink = () => {
+    onAddLink = (e) => {
+        e.preventDefault()
         const editorState = this.state.editorState;
         const selection = editorState.getSelection();
         const link = window.prompt('Paste your link -')
@@ -90,6 +91,31 @@ class PageContainer extends Component {
 			RichUtils.toggleInlineStyle(this.state.editorState, "HIGHLIGHT")
 		);
     };
+
+    onAddImage = (e) => {
+        e.preventDefault()
+        const editorState = this.state.editorState;
+        const urlValue = window.prompt("Paste image link");
+        const contentState = editorState.getCurrentContent();
+        const contentStateWithEntitiy = contentState.createEntity(
+            "image",
+            "IMMUTABLE",
+            { src: urlValue }
+        );
+        const entityKey = contentStateWithEntitiy.getLastCreatedEntityKey();
+        const newEditorState = EditorState.set(
+            editorState,
+            {currentContent: contentStateWithEntitiy},
+            "create-entity"
+        );
+        this.setState({
+            editorState: AtomicBlockUtils.insertAtomicBlock(
+                newEditorState,
+                entityKey,
+                " "
+            )
+        })
+    }
     
     toggleBlockType = (blockType) => {
         this.onChange(
@@ -122,8 +148,11 @@ class PageContainer extends Component {
 					<span style={{ background: "yellow", padding: "0.3em" }}>H</span>
 				</button>
                 <button id="link_url" onClick={this.onAddLink} className="add-link">
-					<i className="material-icons">attach_file</i>
+					<i className="material-icons">link</i>
 				</button>
+                <button className="inline styleButton" onClick={this.onAddImage}>
+                    <i className="material-icons">image</i>
+                </button>
                 <div className="editors">
                     <Editor 
                         blockStyleFn={getBlockStyle}
