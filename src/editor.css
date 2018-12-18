@@ -3,3 +3,24 @@
     margin: 1em;
     text-align: center;
 }
+
+.editors {
+	border: 1px black solid;
+	padding: 1.5em 2em 2.75em 2em;
+	margin: 1.25em;
+	font-family: "Didot";
+	font-size: 1.2em;
+	border-radius: 6px;
+	text-align: left;
+	line-height: 1.5em;
+}
+
+.toolbar {
+	border: 1px black solid;
+	margin: 1.25em;
+	font-family: "Didot";
+	font-size: 1em;
+	border-radius: 4px;
+	text-align: center;
+    line-height: 2.5em;
+}

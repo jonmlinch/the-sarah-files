@@ -1,7 +1,7 @@
 
 html {
-	background: linear-gradient(to bottom, #3a6073 50%, #16222a);
-
+	/* background: linear-gradient(to bottom, #3a6073 50%, #16222a); */
+	background: white;
 	height: 100%;
 	position: relative;
 	width: 100%;
