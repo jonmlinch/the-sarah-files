@@ -1,9 +1,47 @@
+.header-image {
+	text-align: center;
+	width: 100%;
+}
+
+.header-title {
+	margin: 10% 0;
+}
+
 .navbar {
-	background: pink;
-	text-align: right;
+	background: rgba(117, 150, 131, 0.8);
+	text-align: center;
+	padding: 20px;
 }
 
 .nav-element {
-	margin: 10px;
+	margin: 3%;
+	/* padding: 10px; */
+	font-size: 25px;
+	text-decoration: none;
+	color: white;
+	text-shadow: 1px 1px #7d7b7d
 }
 
+p {
+	font-size: 16px;
+  }
+
+@media screen and (min-width: 320px) {
+	p {
+	  font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	p {
+	  font-size: 22px;
+	}
+}
+
+
+
+/* Notes */
+/* Sagebrush green:  rgba(117, 150, 131, 0.8)*/
+/* balsamroot yellow:  rgba(255, 194, 15, 1.0)*/
+/* Indian paintbrush red: rgba(235, 58, 17, 0.9) */
+/* Lupine purple: rgba(108, 95, 186, 0.8) */

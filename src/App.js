@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import Home from './components/Home'
+import Header from './components/Header'
 import Nav from './components/Nav'
+import Home from './components/Home'
 import About from './components/About'
 import Research from './components/Research'
 import Pubs from './components/Publications'
@@ -13,6 +14,7 @@ class App extends Component {
     return (
       <Router>
         <div>
+          <Header />
           <Nav />
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />

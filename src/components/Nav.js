@@ -8,11 +8,13 @@ class Nav extends Component {
     return (
       <div>
        <nav className="navbar">
-           <Link to="/" className="nav-element">Home</Link>
-           <Link to="/about" className="nav-element">About</Link>
-           <Link to="/research" className="nav-element">Research</Link>
-           <Link to="/publications" className="nav-elemnt">Me et al.</Link>
+        <div className="nav-items">
+           <Link to="/" className="nav-element"><strong>Home</strong></Link>
+           <Link to="/about" className="nav-element"><strong>About</strong></Link>
+           <Link to="/research" className="nav-element"><strong>Research</strong></Link>
+           <Link to="/publications" className="nav-element"><strong>Me et al.</strong></Link>
            <Link to="/editor" className="nav-element">Editor</Link>
+        </div>
        </nav>
       </div>
     );
