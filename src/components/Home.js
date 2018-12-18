@@ -18,7 +18,7 @@ class Home extends Component {
     let time = new Date().getHours()
     let morning = 'Good Morning!'
     let afternoon = 'Good Afternoon!'
-    let evening = 'Good evening'
+    let evening = 'Good Evening!'
     if (time >= 0 && time < 12){
       this.setState({
         timeOfDay: morning
