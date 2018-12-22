@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Header from './components/Header'
-import Nav from './components/Nav'
+import TitleBar from './components/Nav'
 import Home from './components/Home'
 import About from './components/About'
 import Research from './components/Research'
@@ -15,7 +15,7 @@ class App extends Component {
       <Router>
         <div>
           <Header />
-          <Nav />
+          <TitleBar />
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/research" component={Research} />

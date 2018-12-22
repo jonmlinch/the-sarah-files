@@ -38,8 +38,9 @@ class Home extends Component {
   render() {
     return (
       <div>
-       <p>This will be the main page</p>
-       <p>{this.state.timeOfDay}</p>
+        {/* <div id="triangle"></div> */}
+        <p>This will be the main page</p>
+        <p>{this.state.timeOfDay}</p>
       </div>
     );
   }

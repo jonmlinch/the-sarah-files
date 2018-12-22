@@ -8,6 +8,7 @@
     "draftjs-to-html": "^0.8.4",
     "immutable": "^4.0.0-rc.12",
     "react": "16.6.0",
+    "react-bootstrap": "^0.32.4",
     "react-dom": "^16.6.3",
     "react-draft-wysiwyg": "^1.12.13",
     "react-emotion": "^10.0.0",

@@ -9,8 +9,20 @@
 
 .navbar {
 	background: rgba(117, 150, 131, 0.8);
-	text-align: center;
-	padding: 20px;
+	/* text-align: center; */
+	/* padding: 20px; */
+}
+
+#signature {
+	font-family: 'Cedarville Cursive', cursive;
+	font-size: 25px;
+	color: white;
+	text-shadow: 1px 1px #7d7b7d
+}
+
+#signature:hover {
+	color: #7d7b7d;
+	text-shadow: 1px 1px #7d7b7d;
 }
 
 .nav-element {
@@ -20,6 +32,12 @@
 	text-decoration: none;
 	color: white;
 	text-shadow: 1px 1px #7d7b7d
+}
+
+.nav-element:hover {
+	text-decoration: none;
+	color: #7d7b7d;
+	text-shadow: 1px 1px #7d7b7d;
 }
 
 p {
@@ -38,6 +56,14 @@ p {
 	}
 }
 
+/* #triangle {
+	display: block;
+	width: 0;
+	height: 0;
+	border-top: 500px solid rgba(117, 150, 131, 0.8);
+	border-left: 1100px solid transparent;
+	z-index: 10;
+  } */
 
 
 /* Notes */
